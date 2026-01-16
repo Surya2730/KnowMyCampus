@@ -1,0 +1,110 @@
+.list-page h2 {
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.list-card {
+    transition: var(--transition);
+}
+
+.list-card:hover {
+    transform: translateY(-5px);
+}
+
+.list-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+.status-btn {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.status-btn.eligible {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-btn.not-eligible {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.description {
+    margin: 15px 0;
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+.meta {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.meta p {
+    margin-bottom: 5px;
+}
+
+.reasons {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+    font-size: 0.85rem;
+    color: var(--error-color);
+}
+
+.reasons ul {
+    padding-left: 15px;
+    list-style: disc;
+}
+
+.role {
+    color: var(--primary-color);
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Info Icon and Criteria Styles */
+.info-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.2s;
+    margin-left: 10px;
+}
+
+.info-icon:hover {
+    transform: scale(1.2);
+}
+
+.criteria-details {
+    background: #f0f7ff;
+    border: 1px solid #cce3ff;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.9rem;
+    color: #004085;
+}
+
+.criteria-details p {
+    margin: 4px 0;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.border-radius-4 {
+    border-radius: 4px;
+}

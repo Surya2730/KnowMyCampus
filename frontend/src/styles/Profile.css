@@ -1,0 +1,16 @@
+.profile-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-details p {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 5px;
+}
+
+.profile-details strong {
+    width: 140px;
+    display: inline-block;
+    color: var(--primary-color);
+}

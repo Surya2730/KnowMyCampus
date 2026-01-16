@@ -1,0 +1,84 @@
+.admin-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-tabs {
+    gap: 10px;
+}
+
+.admin-tabs button {
+    padding: 10px 20px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.admin-tabs button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.admin-section {
+    padding: 10px;
+}
+
+.admin-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+}
+
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.admin-form textarea {
+    min-height: 80px;
+}
+
+.admin-form .form-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.admin-form .form-group input {
+    flex: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #f4f4f4;
+    font-weight: 600;
+}
+
+.btn-danger {
+    background: #ff4d4d;
+}
+
+.btn-danger:hover {
+    background: #ff3333;
+}
