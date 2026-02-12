@@ -44,8 +44,12 @@ const Home = () => {
             <NewsTicker />
 
             <section className="hero-section card">
-                <h1>KnowMyCampus Institute of Technology</h1>
-                <p>Empowering students with technology, resources, and community engagement.</p>
+                <img src="/BannariAmman_logo.png" alt="College Logo" style={{ height: '120px', marginBottom: '20px' }} />
+                <h1>Bannari Amman Institute of Technology</h1>
+                <h3 style={{ textAlign: 'left' }}>About Campus:</h3>
+                <p style={{ textAlign: 'justify' }}>Bannari Amman Institute of Technology is an autonomous, self-financing engineering college approved by AICTE and affiliated to Anna University.
+Located on the banks of the Bhavani River, the campus offers a peaceful, nature-friendly learning environment away from city life.
+It features well-planned academic blocks, hostels, libraries, labs, and student facilities, along with ATMs, a co-operative store, and a health clinic.</p>
             </section>
 
             <section className="events-hub mt-20">

@@ -5,12 +5,12 @@ const asyncHandler = require('express-async-handler');
 // @access  Private
 const getContactDetails = asyncHandler(async (req, res) => {
     res.json({
-        collegeName: 'KnowMyCampus Institute of Technology',
-        address: '123 Academic Lane, Knowledge City, State - 600001',
-        email: 'info@knowmycampus.edu',
-        phone: '+91 98765 43210',
-        website: 'www.knowmycampus.edu',
-        officeHours: '9:00 AM - 5:00 PM (Mon-Fri)',
+        collegeName: 'BANNARI AMMAN INSTITUTE OF TECHNOLOGY',
+        address: 'Sathy - Bhavani State Highway, Alathukombai, Post, Sathyamangalam, Tamil Nadu 638401',
+        email: 'stayahead@bitsathy.ac.in',
+        phone: '+91 94872 - 64923',
+        website: 'www.bitsathy.ac.in',
+        officeHours: '9:00 AM - 5:00 PM (Mon-Sat)',
     });
 });
 

@@ -10,7 +10,7 @@ const Events = () => {
     const [editMode, setEditMode] = useState(false);
     const [currentEventId, setCurrentEventId] = useState(null);
     const [formData, setFormData] = useState({
-        title: '', description: '', venue: '', date: '',
+        title: '', description: '', venue: '', date: '', time: '',
         eligibility: { minCgpa: 0, maxBacklogs: 0, eligibleDepartments: [] }
     });
 
@@ -47,15 +47,12 @@ const Events = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const combinedDate = `${formData.date}T${formData.time || '00:00'}`;
             if (editMode) {
-                // Assuming there's a PUT route, otherwise we'd need to add one. 
-                // For now, let's assume we can at least create and delete per previous dashboard.
-                // I'll stick to creation for simplicity if PUT isn't implemented, 
-                // but usually Edit implies PUT. I'll add PUT logic.
-                await api.put(`/events/${currentEventId}`, formData);
+                await api.put(`/events/${currentEventId}`, { ...formData, date: combinedDate });
                 alert('Event updated successfully');
             } else {
-                await api.post('/events', formData);
+                await api.post('/events', { ...formData, date: combinedDate });
                 alert('Event added successfully');
             }
             setShowForm(false);
@@ -67,11 +64,13 @@ const Events = () => {
     };
 
     const handleEdit = (event) => {
+        const eventDateTime = new Date(event.date);
         setFormData({
             title: event.title,
             description: event.description,
             venue: event.venue,
             date: event.date.split('T')[0],
+            time: eventDateTime.toTimeString().split(' ')[0].substring(0, 5),
             eligibility: event.eligibility || { minCgpa: 0, maxBacklogs: 0, eligibleDepartments: [] }
         });
         setCurrentEventId(event._id);
@@ -108,7 +107,7 @@ const Events = () => {
                 {isAdmin && (
                     <button className="btn btn-primary" onClick={() => {
                         setShowForm(true); setEditMode(false); setFormData({
-                            title: '', description: '', venue: '', date: '',
+                            title: '', description: '', venue: '', date: '', time: '',
                             eligibility: { minCgpa: 0, maxBacklogs: 0, eligibleDepartments: [] }
                         });
                     }}>
@@ -125,6 +124,7 @@ const Events = () => {
                             <input type="text" placeholder="Title" value={formData.title} onChange={(e) => setFormData({ ...formData, title: e.target.value })} required />
                             <input type="text" placeholder="Venue" value={formData.venue} onChange={(e) => setFormData({ ...formData, venue: e.target.value })} required />
                             <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} required />
+                            <input type="time" value={formData.time} onChange={(e) => setFormData({ ...formData, time: e.target.value })} required />
                             <div className="flex gap-10">
                                 <input type="number" step="0.1" placeholder="Min CGPA" value={formData.eligibility.minCgpa} onChange={(e) => setFormData({ ...formData, eligibility: { ...formData.eligibility, minCgpa: e.target.value } })} required />
                                 <input type="number" placeholder="Max Backlogs" value={formData.eligibility.maxBacklogs} onChange={(e) => setFormData({ ...formData, eligibility: { ...formData.eligibility, maxBacklogs: e.target.value } })} required />

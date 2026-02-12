@@ -36,6 +36,9 @@ const Login = ({ setUserInfo }) => {
     return (
         <div className="auth-container">
             <div className="card auth-card">
+                <center>
+                    <img src="/BannariAmman_logo.png" alt="College Logo" style={{ height: '100px', marginBottom: '15px' }} />
+                </center>
                 <h2>Welcome to KnowMyCampus</h2>
                 {error && <div className="error-msg">{error}</div>}
 
