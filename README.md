@@ -52,7 +52,7 @@ KnowMyCampus is a full-stack MERN portal designed to automate college processes 
    ```
 5. Start the server:
    ```bash
-   npm run dev  # using nodemon
+   npm run dev  
    ```
 
 ### 3. Frontend Setup
