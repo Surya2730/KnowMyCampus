@@ -11,7 +11,6 @@ backend/node_modules/
 .env.production.local
 backend/.env
 frontend/.env
-KnowMyCampus.postman_collection.json
 
 # Logs
 logs
