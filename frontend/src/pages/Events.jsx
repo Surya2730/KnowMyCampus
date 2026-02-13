@@ -11,7 +11,7 @@ const Events = () => {
     const [currentEventId, setCurrentEventId] = useState(null);
     const [formData, setFormData] = useState({
         title: '', description: '', venue: '', date: '', time: '',
-        eligibility: { minCgpa: 0, maxBacklogs: 0, eligibleDepartments: [] }
+        eligibility: { minCgpa: '', maxBacklogs: '', eligibleDepartments: [] }
     });
 
     const fetchEvents = async () => {
@@ -108,7 +108,7 @@ const Events = () => {
                     <button className="btn btn-primary" onClick={() => {
                         setShowForm(true); setEditMode(false); setFormData({
                             title: '', description: '', venue: '', date: '', time: '',
-                            eligibility: { minCgpa: 0, maxBacklogs: 0, eligibleDepartments: [] }
+                            eligibility: { minCgpa: '', maxBacklogs: '', eligibleDepartments: [] }
                         });
                     }}>
                         + Add Event
@@ -121,16 +121,35 @@ const Events = () => {
                     <h3>{editMode ? 'Edit Event' : 'Add New Event'}</h3>
                     <form onSubmit={handleSubmit} className="admin-form">
                         <div className="grid grid-cols-2 gap-10">
-                            <input type="text" placeholder="Title" value={formData.title} onChange={(e) => setFormData({ ...formData, title: e.target.value })} required />
-                            <input type="text" placeholder="Venue" value={formData.venue} onChange={(e) => setFormData({ ...formData, venue: e.target.value })} required />
-                            <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} required />
-                            <input type="time" value={formData.time} onChange={(e) => setFormData({ ...formData, time: e.target.value })} required />
-                            <div className="flex gap-10">
+                            <div>
+                                <label>Event Title</label>
+                                <input type="text" placeholder="Title" value={formData.title} onChange={(e) => setFormData({ ...formData, title: e.target.value })} required />
+                            </div>
+                            <div>
+                                <label>Venue</label>
+                                <input type="text" placeholder="Venue" value={formData.venue} onChange={(e) => setFormData({ ...formData, venue: e.target.value })} required />
+                            </div>
+                            <div>
+                                <label>Date</label>
+                                <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} required />
+                            </div>
+                            <div>
+                                <label>Time</label>
+                                <input type="time" value={formData.time} onChange={(e) => setFormData({ ...formData, time: e.target.value })} required />
+                            </div>
+                            <div>
+                                <label>Min CGPA</label>
                                 <input type="number" step="0.1" placeholder="Min CGPA" value={formData.eligibility.minCgpa} onChange={(e) => setFormData({ ...formData, eligibility: { ...formData.eligibility, minCgpa: e.target.value } })} required />
+                            </div>
+                            <div>
+                                <label>Max Backlogs</label>
                                 <input type="number" placeholder="Max Backlogs" value={formData.eligibility.maxBacklogs} onChange={(e) => setFormData({ ...formData, eligibility: { ...formData.eligibility, maxBacklogs: e.target.value } })} required />
                             </div>
                         </div>
-                        <textarea placeholder="Description" value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} required className="w-full mt-10"></textarea>
+                        <div className="mt-10">
+                            <label>Description</label>
+                            <textarea placeholder="Description" value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} required className="w-full"></textarea>
+                        </div>
                         <div className="flex gap-10 mt-10">
                             <button type="submit" className="btn btn-primary">{editMode ? 'Update' : 'Create'}</button>
                             <button type="button" className="btn btn-secondary" onClick={() => setShowForm(false)}>Cancel</button>
@@ -139,7 +158,7 @@ const Events = () => {
                 </div>
             )}
 
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 items-start">
                 {events.map(event => (
                     <div key={event._id} className="card list-card">
                         <div className="flex justify-between items-center">

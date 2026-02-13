@@ -20,7 +20,7 @@ const MainContent = ({ userInfo, setUserInfo }) => {
   return (
     <>
       {!isLoginPage && <Navbar userInfo={userInfo} setUserInfo={setUserInfo} />}
-      <main className="container" style={{ paddingTop: '20px' }}>
+      <main className="container" style={{ paddingTop: isLoginPage ? '0' : '20px' }}>
         <Routes>
           <Route path="/" element={userInfo ? <Home /> : <Login setUserInfo={setUserInfo} />} />
           <Route path="/login" element={<Login setUserInfo={setUserInfo} />} />

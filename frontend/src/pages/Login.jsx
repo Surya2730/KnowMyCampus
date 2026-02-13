@@ -78,9 +78,9 @@ const Login = ({ setUserInfo }) => {
                     <button type="submit" className="btn btn-primary w-full">Sign In</button>
                 </form>
 
-                <div className="auth-footer" style={{ marginTop: '20px', fontSize: '0.9rem', color: '#777' }}>
+                {/* <div className="auth-footer" style={{ marginTop: '20px', fontSize: '0.9rem', color: '#777' }}>
                     Registration is disabled. Sign in with Google to auto-create an account.
-                </div>
+                </div> */}
             </div>
         </div>
     );

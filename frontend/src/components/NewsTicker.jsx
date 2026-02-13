@@ -25,7 +25,7 @@ const NewsTicker = () => {
                     {news.length > 0 ? (
                         news.map((item, index) => (
                             <span key={item._id}>
-                                {item.title}: {item.content.substring(0, 50)}...
+                                {item.title}: {item.content}
                                 {index !== news.length - 1 && ' | '}
                             </span>
                         ))

@@ -44,12 +44,12 @@ const Home = () => {
             <NewsTicker />
 
             <section className="hero-section card">
-                <img src="/BannariAmman_logo.png" alt="College Logo" style={{ height: '120px', marginBottom: '20px' }} />
-                <h1>Bannari Amman Institute of Technology</h1>
-                <h3 style={{ textAlign: 'left' }}>About Campus:</h3>
+                <img src="/header 06.png" alt="College Logo" className="hero-image" />
+                {/* <h1>Bannari Amman Institute of Technology</h1> */}
+                <h3 style={{ textAlign: 'left' }}>ABOUT CAMPUS</h3>
                 <p style={{ textAlign: 'justify' }}>Bannari Amman Institute of Technology is an autonomous, self-financing engineering college approved by AICTE and affiliated to Anna University.
-Located on the banks of the Bhavani River, the campus offers a peaceful, nature-friendly learning environment away from city life.
-It features well-planned academic blocks, hostels, libraries, labs, and student facilities, along with ATMs, a co-operative store, and a health clinic.</p>
+                    Located on the banks of the Bhavani River, the campus offers a peaceful, nature-friendly learning environment away from city life.
+                    It features well-planned academic blocks, hostels, libraries, labs, and student facilities, along with ATMs, a co-operative store, and a health clinic.</p>
             </section>
 
             <section className="events-hub mt-20">
@@ -95,32 +95,55 @@ It features well-planned academic blocks, hostels, libraries, labs, and student 
                 </div>
             </section>
 
-            <h2 className="title mt-30">Explore Our Campus</h2>
+            <h2 className="title mt-30">EXPLORE OUR CAMPUS</h2>
             <div className="details-grid">
                 <section className="detail-card card">
-                    <h3>🏫 Campus Life</h3>
+                    <h3>CAMPUS LIFE</h3>
+                    <img src="/campus photo.avif" alt="Campus Life" className="card-image" />
                     <p>Our 50-acre lush green campus is equipped with state-of-the-art infrastructure, including smart classrooms and advanced laboratories.</p>
                 </section>
                 <section className="detail-card card">
-                    <h3>🏠 Residential Life</h3>
+                    <h3>RESIDENTIAL LIFE</h3>
+                    <img src="/hostel.jpg" alt="Residential Life" className="card-image" />
                     <p>Separate hostels for boys and girls with 24/7 security, high-speed Wi-Fi, and recreational common rooms.</p>
                 </section>
                 <section className="detail-card card">
-                    <h3>👨‍🎓 Placement Cell</h3>
-                    <p>Dedicated placement wing ensuring 95%+ recruitment annually with top MNCs like Google and Amazon.</p>
+                    <h3>PLACEMENT CELL</h3>
+                    <img src="/placement.jpg" alt="Placement Cell" className="card-image" />
+                    <p>Dedicated placement wing ensuring 95%+ recruitment annually with top MNCs like Juspay and Zoho.</p>
                 </section>
                 <section className="detail-card card">
-                    <h3>📚 Academics</h3>
+                    <h3>ACADEMICS</h3>
+                    <img src="/class.webp" alt="Academics" className="card-image" />
                     <p>World-class industry-aligned education in engineering, management, and science taught by expert faculty.</p>
                 </section>
                 <section className="detail-card card">
-                    <h3>🍔 Food & Cafeteria</h3>
+                    <h3>RESEARCH PARK</h3>
+                    <img src="/research-park.avif" alt="Research Park" className="card-image" />
+                    <p>A dedicated ecosystem for innovation and entrepreneurship, fostering collaboration between students and industry partners.</p>
+                </section>
+                <section className="detail-card card">
+                    <h3>SPECIAL LAB</h3>
+                    <img src="/special lab.jpg" alt="Special Lab" className="card-image" />
+                    <p>Equipped with the latest technology and high-end workstations designed for advanced research and practical learning.</p>
+                </section>
+                <section className="detail-card card">
+                    <h3>FOOD & CAFETERIA</h3>
+                    <img src="/cafe.jpg" alt="Food & Cafeteria" className="card-image" />
                     <p>Nutritious multi-cuisine food served in spacious dining halls. Our hub for student interactions.</p>
                 </section>
                 <section className="detail-card card">
-                    <h3>🏪 Refreshment Hubs</h3>
-                    <p>Strategic coffee houses across the campus to keep students energized throughout the day.</p>
+                    <h3>SPORTS & GAMES</h3>
+                    <img src="/ground.jpg" alt="Sports" className="card-image" />
+                    <p>World-class sports facilities including professional-grade cricket grounds, football fields, and indoor sports complexes.</p>
                 </section>
+                
+                <section className="detail-card card">
+                    <h3>SEMINAR HALL</h3>
+                    <img src="/seminar hall.jpg" alt="Seminar Hall" className="card-image" />
+                    <p>Spacious and air-conditioned halls perfectly suited for international workshops, guest lectures, and student presentations.</p>
+                </section>
+                
             </div>
         </div>
     );

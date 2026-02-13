@@ -11,7 +11,7 @@ const Companies = () => {
     const [currentCompanyId, setCurrentCompanyId] = useState(null);
     const [formData, setFormData] = useState({
         name: '', role: '', description: '', salary: '', date: '',
-        eligibility: { minCgpa: 0, maxBacklogs: 0, arrearsAllowed: true, eligibleDepartments: [] }
+        eligibility: { minCgpa: '', maxBacklogs: '', arrearsAllowed: true, eligibleDepartments: [] }
     });
 
     const fetchCompanies = async () => {
@@ -106,7 +106,7 @@ const Companies = () => {
                     <button className="btn btn-primary" onClick={() => {
                         setShowForm(true); setEditMode(false); setFormData({
                             name: '', role: '', description: '', salary: '', date: '',
-                            eligibility: { minCgpa: 0, maxBacklogs: 0, arrearsAllowed: true, eligibleDepartments: [] }
+                            eligibility: { minCgpa: '', maxBacklogs: '', arrearsAllowed: true, eligibleDepartments: [] }
                         });
                     }}>
                         + Add Company
@@ -119,12 +119,28 @@ const Companies = () => {
                     <h3>{editMode ? 'Edit Company' : 'Add New Company'}</h3>
                     <form onSubmit={handleSubmit} className="admin-form">
                         <div className="grid grid-cols-2 gap-10">
-                            <input type="text" placeholder="Company Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
-                            <input type="text" placeholder="Job Role" value={formData.role} onChange={(e) => setFormData({ ...formData, role: e.target.value })} required />
-                            <input type="text" placeholder="Salary Package" value={formData.salary} onChange={(e) => setFormData({ ...formData, salary: e.target.value })} required />
-                            <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} required />
-                            <div className="flex gap-10">
+                            <div>
+                                <label>Company Name</label>
+                                <input type="text" placeholder="Company Name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
+                            </div>
+                            <div>
+                                <label>Job Role</label>
+                                <input type="text" placeholder="Job Role" value={formData.role} onChange={(e) => setFormData({ ...formData, role: e.target.value })} required />
+                            </div>
+                            <div>
+                                <label>Salary Package</label>
+                                <input type="text" placeholder="Salary Package" value={formData.salary} onChange={(e) => setFormData({ ...formData, salary: e.target.value })} required />
+                            </div>
+                            <div>
+                                <label>Drive Date</label>
+                                <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} required />
+                            </div>
+                            <div>
+                                <label>Min CGPA</label>
                                 <input type="number" step="0.1" placeholder="Min CGPA" value={formData.eligibility.minCgpa} onChange={(e) => setFormData({ ...formData, eligibility: { ...formData.eligibility, minCgpa: e.target.value } })} required />
+                            </div>
+                            <div>
+                                <label>Max Backlogs</label>
                                 <input type="number" placeholder="Max Backlogs" value={formData.eligibility.maxBacklogs} onChange={(e) => setFormData({ ...formData, eligibility: { ...formData.eligibility, maxBacklogs: e.target.value } })} required />
                             </div>
                             <label className="flex items-center gap-5 mt-10">
@@ -132,7 +148,10 @@ const Companies = () => {
                                 Arrears Allowed
                             </label>
                         </div>
-                        <textarea placeholder="Description" value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} required className="w-full mt-10"></textarea>
+                        <div className="mt-10">
+                            <label>Description</label>
+                            <textarea placeholder="Description" value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} required className="w-full"></textarea>
+                        </div>
                         <div className="flex gap-10 mt-10">
                             <button type="submit" className="btn btn-primary">{editMode ? 'Update' : 'Create'}</button>
                             <button type="button" className="btn btn-secondary" onClick={() => setShowForm(false)}>Cancel</button>
@@ -141,7 +160,7 @@ const Companies = () => {
                 </div>
             )}
 
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 items-start">
                 {companies.map(company => (
                     <div key={company._id} className="card list-card">
                         <div className="flex justify-between items-center">
